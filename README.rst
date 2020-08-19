@@ -74,10 +74,6 @@ Running the container (bound to localhost on the host):
     docker run -p 5000:5000 --name hmgqls hmgqls
 
 
-And `check in the browser to see the Playground UI <http://0.0.0.0:5000/graphql>`_. 
+And `check in the browser to see the Playground UI <http://localhost:5000/graphql>`_. 
 
-Or query a specific device ... 
-
-.. code-block: 
-
-    http://0.0.0.0:5000/graphql?query={shuttercontacts{windowState}}
+Or query a specific device, e.g. `http://localhost:5000/graphql?query={shuttercontacts{windowState}}`
