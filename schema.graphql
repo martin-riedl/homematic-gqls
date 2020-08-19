@@ -1,0 +1,111 @@
+interface Device {
+    label: String!
+    deviceType: String!
+    id: String!
+    homeId: String!
+    lastStatusUpdate: String!
+    updateState: String!
+    firmwareVersion: String!
+    availableFirmwareVersion: String!
+    lowBat: String!
+    routerModuleSupported: String!
+    routerModuleEnabled: String!
+    modelType: String!
+    modelId: String!
+    oem: String!
+    manufacturerCode: String!
+    serializedGlobalTradeItemNumber: String!
+    rssiDeviceValue: String!
+    dutyCycle: String!
+    configPending: String!
+    permanentlyReachable: String!
+    liveUpdateState: String!
+    functionalChannels: String!
+    functionalChannelCount: String!
+    deviceOverheated: String!
+    deviceOverloaded: String!
+    deviceUndervoltage: String!
+    temperatureOutOfRange: String!
+    coProFaulty: String!
+    coProRestartNeeded: String!
+    coProUpdateFailure: String!
+}
+
+type ShutterContact implements Device {
+label: String!
+    deviceType: String!
+    id: String!
+    homeId: String!
+    lastStatusUpdate: String!
+    updateState: String!
+    firmwareVersion: String!
+    availableFirmwareVersion: String!
+    lowBat: String!
+    routerModuleSupported: String!
+    routerModuleEnabled: String!
+    modelType: String!
+    modelId: String!
+    oem: String!
+    manufacturerCode: String!
+    serializedGlobalTradeItemNumber: String!
+    rssiDeviceValue: String!
+    dutyCycle: String!
+    configPending: String!
+    permanentlyReachable: String!
+    liveUpdateState: String!
+    functionalChannels: String!
+    functionalChannelCount: String!
+    deviceOverheated: String!
+    deviceOverloaded: String!
+    deviceUndervoltage: String!
+    temperatureOutOfRange: String!
+    coProFaulty: String!
+    coProRestartNeeded: String!
+    coProUpdateFailure: String!
+
+    windowState: String!
+}
+
+type TemperatureHumiditySensorDisplay implements Device {
+    label: String!
+    deviceType: String!
+    id: String!
+    homeId: String!
+    lastStatusUpdate: String!
+    updateState: String!
+    firmwareVersion: String!
+    availableFirmwareVersion: String!
+    lowBat: String!
+    routerModuleSupported: String!
+    routerModuleEnabled: String!
+    modelType: String!
+    modelId: String!
+    oem: String!
+    manufacturerCode: String!
+    serializedGlobalTradeItemNumber: String!
+    rssiDeviceValue: String!
+    dutyCycle: String!
+    configPending: String!
+    permanentlyReachable: String!
+    liveUpdateState: String!
+    functionalChannels: String!
+    functionalChannelCount: String!
+    deviceOverheated: String!
+    deviceOverloaded: String!
+    deviceUndervoltage: String!
+    temperatureOutOfRange: String!
+    coProFaulty: String!
+    coProRestartNeeded: String!
+    coProUpdateFailure: String!
+
+    temperatureOffset: String!
+    display: String!
+    actualTemperature: String!
+    humidity: String!
+    setPointTemperature: String!
+}
+
+type Query {
+    shuttercontacts: [ShutterContact]!
+    ths_displays: [TemperatureHumiditySensorDisplay]
+}

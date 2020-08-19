@@ -1,0 +1,4 @@
+flask
+ariadne
+apscheduler
+homematicip
