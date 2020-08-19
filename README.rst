@@ -78,6 +78,6 @@ And `check in the browser to see the Playground UI <http://0.0.0.0:5000/graphql>
 
 Or query a specific device ... 
 
-..code-block: 
+.. code-block: 
 
     http://0.0.0.0:5000/graphql?query={shuttercontacts{windowState}}
