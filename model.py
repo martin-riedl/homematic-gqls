@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 from ariadne import QueryType
 
 import homematicip

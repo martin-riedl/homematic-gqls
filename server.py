@@ -1,3 +1,11 @@
+#!/usr/bin/python3
+
+__author__ = "Martin Riedl"
+__copyright__ = "Copyright 2020"
+__credits__ = ["coreGreenberet (https://github.com/coreGreenberet)", "Seth Corker (https://blog.sethcorker.com/how-to-create-a-react-flask-graphql-project)"]
+__license__ = "GPL"
+__maintainer__ = "Martin Riedl"
+
 from flask import Flask, request, jsonify
 from ariadne import graphql_sync, make_executable_schema, gql, load_schema_from_path
 from ariadne.constants import PLAYGROUND_HTML
