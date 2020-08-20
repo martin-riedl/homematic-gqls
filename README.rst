@@ -63,13 +63,13 @@ Docker
 
 Building the image:
 
-.. code-block: bash
+.. code-block:: bash
 
     docker build --tag hmgqls .
 
 Running the container (bound to localhost on the host):
 
-.. code-block: bash
+.. code-block:: bash
 
     docker run -p 5000:5000 --name hmgqls hmgqls
 
