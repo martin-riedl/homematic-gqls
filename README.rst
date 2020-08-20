@@ -54,8 +54,7 @@ A request via HTTP GET which refreshes each 60k ms may look as follows:
 
 .. code-block::
     
-    String windowstatus "WindowStatus [%s]" { http="<[http://localhost:5000/graphql?query=%%7Bshuttercontacts%%7BwindowState%%7D%%7D:5000$
-
+    String windowstatus "WindowStatus [%s]" { http="<[http://myhost:5000/graphql?query=%%7Bshuttercontacts%%7BwindowState%%7D%%7D:5000:JSONPATH($.data.shuttercontacts[0].windowState)]" }
 
 
 Docker 
