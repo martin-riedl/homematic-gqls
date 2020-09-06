@@ -21,13 +21,13 @@ Setup
     #.  Follow the instructions from `homematicip-rest-api <https://github.com/coreGreenberet/homematicip-rest-api>`_ to obtain an `authtoken` for your homematicIP cloud account (hereby a file `config.ini` is created).
     #. Copy the resulting file `config.ini` into the main directory of this repository. 
         
-#.  Install the requirements 
+#. Install the requirements 
 
     .. code-block::
 
         pip3 install -r requirements --user
 
-#.  Start the server
+#. Start the server
 
     .. code-block::
 
