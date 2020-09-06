@@ -4,10 +4,12 @@ HomeMatic GQLS (Graph Query Language Service)
 This Flask-based wrapper of the great `homematicip-rest-api <https://github.com/coreGreenberet/homematicip-rest-api>`_ can be used to 
 integrate with various other gateways that allow for a GraphQL access.
 
+.. image:: https://repository-images.githubusercontent.com/288663383/6ccbd800-f080-11ea-8c04-dd17821a7334
+   :height: 100px
+   :width: 200 px
+   :scale: 50 %
 
-.. note::
-
-    This is a very first version. As of now, the model only supports TemperatureHumiditySensorDisplay and ShutterContact, as these are those sensors that I have in use right now. However this could be easily extended. 
+.. note:: This is a very first version. As of now, the model only supports TemperatureHumiditySensorDisplay and ShutterContact, as these are those sensors that I have in use right now. However this could be easily extended. 
 
 Setup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
