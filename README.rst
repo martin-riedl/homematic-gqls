@@ -12,9 +12,15 @@ integrate with various other gateways that allow for a GraphQL access.
 Setup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#.  This item is auto-enumerated 
-#.  Follow the instructions from `homematicip-rest-api <https://github.com/coreGreenberet/homematicip-rest-api>`_ to obtain an `authtoken` for your homematicIP cloud account (hereby a file `config.ini` is created).
-#.  Copy the resulting file `config.ini` into the main directory of this repository. 
+#.  Clone this repo.
+    .. code-block::
+
+        git clone https://github.com/martin-riedl/homematic-gqls
+        
+#. Get authtoken
+        #.  Follow the instructions from `homematicip-rest-api <https://github.com/coreGreenberet/homematicip-rest-api>`_ to obtain an `authtoken` for your homematicIP cloud account (hereby a file `config.ini` is created).
+        #.  Copy the resulting file `config.ini` into the main directory of this repository. 
+        
 #.  Install the requirements 
 
     .. code-block::
