@@ -22,13 +22,11 @@ Setup
     #. Copy the resulting file `config.ini` into the main directory of this repository. 
         
 #. Install the requirements 
-
     .. code-block::
 
         pip3 install -r requirements --user
 
 #. Start the server
-
     .. code-block::
 
         python3 server.py
