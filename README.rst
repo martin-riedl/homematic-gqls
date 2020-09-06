@@ -12,12 +12,14 @@ integrate with various other gateways that allow for a GraphQL access.
 Setup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#.  Clone this repo.
+#. Clone this repo
+
     .. code-block::
 
         git clone https://github.com/martin-riedl/homematic-gqls
         
-#. Get authtoken
+#. Obtain authtoken from Homematic IP Cloud
+
         #.  Follow the instructions from `homematicip-rest-api <https://github.com/coreGreenberet/homematicip-rest-api>`_ to obtain an `authtoken` for your homematicIP cloud account (hereby a file `config.ini` is created).
         #.  Copy the resulting file `config.ini` into the main directory of this repository. 
         
@@ -51,10 +53,10 @@ A GET request using `curl`
     curl -X GET localhost:5000/graphql?query=%7Bshuttercontacts%7BwindowState%7D%7D
 
 
-Include in OpenHub
+Include in OpenHAB
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-For further information see `OpenHab HTTP Binding <https://www.openhab.org/addons/bindings/http1/>`_.
+For further information see `OpenHAB HTTP Binding <https://www.openhab.org/addons/bindings/http1/>`_.
 
 A request via HTTP GET which refreshes each 60k ms may look as follows:
 
