@@ -42,13 +42,13 @@ A POST request using `curl`
 
 .. code-block::
 
-    curl -X POST localhost:5000/graphql -H "Content-Type: application/json" --data '{"query":"{shuttercontacts{windowState}}"}'
+    curl -X POST localhost:8191/graphql -H "Content-Type: application/json" --data '{"query":"{shuttercontacts{windowState}}"}'
 
 A GET request using `curl`
 
 .. code-block::
 
-    curl -X GET localhost:5000/graphql?query=%7Bshuttercontacts%7BwindowState%7D%7D
+    curl -X GET localhost:8191/graphql?query=%7Bshuttercontacts%7BwindowState%7D%7D
 
 
 Include in OpenHAB
@@ -60,7 +60,7 @@ A request via HTTP GET which refreshes each 60k ms may look as follows:
 
 .. code-block::
     
-    String windowstatus "WindowStatus [%s]" { http="<[http://myhost:5000/graphql?query=%%7Bshuttercontacts%%7BwindowState%%7D%%7D:5000:JSONPATH($.data.shuttercontacts[0].windowState)]" }
+    String windowstatus "WindowStatus [%s]" { http="<[http://myhost:8191/graphql?query=%%7Bshuttercontacts%%7BwindowState%%7D%%7D:8191:JSONPATH($.data.shuttercontacts[0].windowState)]" }
 
 
 Docker 
@@ -76,9 +76,9 @@ Running the container (bound to localhost on the host):
 
 .. code-block:: bash
 
-    docker run -p 5000:5000 --name hmgqls hmgqls
+    docker run -p 8191:8191 -d --restart unless-stopped --name hmgqls hmgqls
 
 
 And `check in the browser to see the Playground UI <http://localhost:5000/graphql>`_. 
 
-Or query a specific device, e.g. `http://localhost:5000/graphql?query={shuttercontacts{windowState}}`
+Or query a specific device, e.g. `http://localhost:8191/graphql?query={shuttercontacts{windowState}}`

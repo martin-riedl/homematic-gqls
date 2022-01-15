@@ -15,8 +15,8 @@ interface Device {
     oem: String!
     manufacturerCode: String!
     serializedGlobalTradeItemNumber: String!
-    rssiDeviceValue: String!
-    dutyCycle: String!
+    #rssiDeviceValue: String!
+    #dutyCycle: String!
     configPending: String!
     permanentlyReachable: String!
     liveUpdateState: String!
@@ -48,8 +48,8 @@ label: String!
     oem: String!
     manufacturerCode: String!
     serializedGlobalTradeItemNumber: String!
-    rssiDeviceValue: String!
-    dutyCycle: String!
+    #rssiDeviceValue: String!
+    #dutyCycle: String!
     configPending: String!
     permanentlyReachable: String!
     liveUpdateState: String!
@@ -83,8 +83,8 @@ type TemperatureHumiditySensorDisplay implements Device {
     oem: String!
     manufacturerCode: String!
     serializedGlobalTradeItemNumber: String!
-    rssiDeviceValue: String!
-    dutyCycle: String!
+    #rssiDeviceValue: String!
+    #dutyCycle: String!
     configPending: String!
     permanentlyReachable: String!
     liveUpdateState: String!
@@ -107,5 +107,7 @@ type TemperatureHumiditySensorDisplay implements Device {
 
 type Query {
     shuttercontacts: [ShutterContact]!
+    shuttercontacts_filtered (label_filter: String!): [ShutterContact]!
     ths_displays: [TemperatureHumiditySensorDisplay]
+    ths_displays_filtered (label_filter: String!): [TemperatureHumiditySensorDisplay]
 }

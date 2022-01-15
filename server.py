@@ -17,7 +17,7 @@ schema = make_executable_schema(type_defs, query)
 
 app = Flask(__name__)
 
-# Switch caching off 
+# Switch caching off
 
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
@@ -37,17 +37,17 @@ def add_header(r):
 def graphql_playground():
     """Serve GraphQL playground"""
     if 'query' in request.args:
-        # serve query 
+        # serve query
         success, result = graphql_sync(
             schema,
             {
                 "query" : request.args['query']
-            }        
+            }
         )
         status_code = 200 if success else 400
         return jsonify(result), status_code
     else:
-        # only serve playground if no query argument is given ... 
+        # only serve playground if no query argument is given ...
         return PLAYGROUND_HTML, 200
 
 @app.route("/graphql", methods=["POST"])
@@ -66,5 +66,5 @@ def graphql_server():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host="0.0.0.0")
+    app.run(debug=True, host="0.0.0.0", port=8191)
 
