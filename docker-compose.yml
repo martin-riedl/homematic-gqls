@@ -1,0 +1,8 @@
+version: "3.8"
+services:
+    gqls:
+        build: .
+        ports:
+            - "0.0.0.0:5000:8191"
+        restart: unless-stopped
+
