@@ -4,7 +4,6 @@ from ariadne import QueryType
 import homematicip
 from homematicip.home import Home
 from homematicip.device import ShutterContact, TemperatureHumiditySensorDisplay
-from apscheduler.schedulers.background import BackgroundScheduler
 
 # load homematic config
 config = homematicip.find_and_load_config_file()
@@ -17,11 +16,8 @@ home.init(config.access_point)
 # do a first initial request
 home.get_current_state()
 
-# schedule a task at a given interval to update status
-sched = BackgroundScheduler(daemon=True)
-sched.add_job(lambda : home.get_current_state(),'interval',seconds=600)
-sched.start()
-
+# does the updating automatically
+home.enable_events()
 
 # RESOLVERS
 
