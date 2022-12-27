@@ -1,4 +1,4 @@
-interface Device {
+interface DeviceIF {
     label: String!
     deviceType: String!
     id: String!
@@ -31,8 +31,43 @@ interface Device {
     coProUpdateFailure: String!
 }
 
-type ShutterContact implements Device {
-label: String!
+type GenericDevice implements DeviceIF {
+    label: String!
+    deviceType: String!
+    id: String!
+    homeId: String!
+    lastStatusUpdate: String!
+    updateState: String!
+    firmwareVersion: String!
+    availableFirmwareVersion: String!
+    lowBat: String!
+    routerModuleSupported: String!
+    routerModuleEnabled: String!
+    modelType: String!
+    modelId: String!
+    oem: String!
+    manufacturerCode: String!
+    serializedGlobalTradeItemNumber: String!
+    #rssiDeviceValue: String!
+    #dutyCycle: String!
+    configPending: String!
+    permanentlyReachable: String!
+    liveUpdateState: String!
+    functionalChannels: String!
+    functionalChannelCount: String!
+    deviceOverheated: String!
+    deviceOverloaded: String!
+    deviceUndervoltage: String!
+    temperatureOutOfRange: String!
+    coProFaulty: String!
+    coProRestartNeeded: String!
+    coProUpdateFailure: String!
+
+}
+
+
+type ShutterContact implements DeviceIF {
+    label: String!
     deviceType: String!
     id: String!
     homeId: String!
@@ -66,7 +101,7 @@ label: String!
     windowState: String!
 }
 
-type TemperatureHumiditySensorDisplay implements Device {
+type TemperatureHumiditySensorDisplay implements DeviceIF {
     label: String!
     deviceType: String!
     id: String!
@@ -106,6 +141,9 @@ type TemperatureHumiditySensorDisplay implements Device {
 }
 
 type Query {
+    genericdevices: [GenericDevice]!
+    genericdevices_filtered (deviceType_filter: String!): [GenericDevice]!
+    
     shuttercontacts: [ShutterContact]!
     shuttercontacts_filtered (label_filter: String!): [ShutterContact]!
     ths_displays: [TemperatureHumiditySensorDisplay]
