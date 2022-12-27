@@ -1,4 +1,3 @@
 flask
 ariadne
-apscheduler
 homematicip
