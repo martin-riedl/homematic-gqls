@@ -44,6 +44,12 @@ A POST request using `curl`
 
     curl -X POST localhost:8191/graphql -H "Content-Type: application/json" --data '{"query":"{shuttercontacts{windowState}}"}'
 
+or using a filter on the label  
+
+.. code-block::
+
+    curl -X POST localhost:8191/graphql -H "Content-Type: application/json" --data '{"query":"{shuttercontacts_filtered (label_filter : "mylabelorempty") {label windowState}}"}'
+
 A GET request using `curl`
 
 .. code-block::
