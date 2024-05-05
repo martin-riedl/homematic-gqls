@@ -2,18 +2,24 @@
 
 __author__ = "Martin Riedl"
 __copyright__ = "Copyright 2020"
-__credits__ = ["coreGreenberet (https://github.com/coreGreenberet)", "Seth Corker (https://blog.sethcorker.com/how-to-create-a-react-flask-graphql-project)"]
+__credits__ = [
+    "coreGreenberet (https://github.com/coreGreenberet)", 
+    "hahn-th (https://github.com/hahn-th/homematicip-rest-api)",
+    "Seth Corker (https://blog.sethcorker.com/how-to-create-a-react-flask-graphql-project)"
+]
 __license__ = "GPL"
 __maintainer__ = "Martin Riedl"
 
 from flask import Flask, request, jsonify
 from ariadne import graphql_sync, make_executable_schema, gql, load_schema_from_path
-from ariadne.constants import PLAYGROUND_HTML
+from ariadne.explorer import ExplorerGraphiQL
 
 from model import query
 
 type_defs = gql(load_schema_from_path("./schema.graphql"))
 schema = make_executable_schema(type_defs, query)
+
+explorer_html = ExplorerGraphiQL().html(None)
 
 app = Flask(__name__)
 
@@ -48,7 +54,7 @@ def graphql_playground():
         return jsonify(result), status_code
     else:
         # only serve playground if no query argument is given ...
-        return PLAYGROUND_HTML, 200
+        return explorer_html, 200
 
 @app.route("/graphql", methods=["POST"])
 def graphql_server():
