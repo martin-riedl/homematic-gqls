@@ -1,4 +1,4 @@
-FROM bitnami/python:3.10
+FROM bitnami/python:3.13.3
 
 RUN mkdir hmgqls
 RUN pip install gunicorn
