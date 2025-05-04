@@ -133,11 +133,11 @@ type TemperatureHumiditySensorDisplay implements DeviceIF {
     coProRestartNeeded: String!
     coProUpdateFailure: String!
 
-    temperatureOffset: String!
+    temperatureOffset: Float!
     display: String!
-    actualTemperature: String!
-    humidity: String!
-    setPointTemperature: String!
+    actualTemperature: Float!
+    humidity: Float!
+    setPointTemperature: Float!
 }
 
 type Query {
