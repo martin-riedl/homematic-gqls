@@ -1,4 +1,5 @@
 flask==3.1.0
 ariadne==0.26.2
-homematicip==1.1.5
+homematicip==1.1.7
+#homematicip==2.0.1.1
 
