@@ -4,31 +4,29 @@ interface DeviceIF {
     id: String!
     homeId: String!
     lastStatusUpdate: String!
-    updateState: String!
+    updateState: String!                  # Ideally should be an Enum
     firmwareVersion: String!
     availableFirmwareVersion: String!
-    lowBat: String!
-    routerModuleSupported: String!
-    routerModuleEnabled: String!
+    lowBat: Boolean!
+    routerModuleSupported: Boolean!
+    routerModuleEnabled: Boolean!
     modelType: String!
-    modelId: String!
+    modelId: Int!
     oem: String!
-    manufacturerCode: String!
+    manufacturerCode: Int!
     serializedGlobalTradeItemNumber: String!
-    #rssiDeviceValue: String!
-    #dutyCycle: String!
-    configPending: String!
-    permanentlyReachable: String!
-    liveUpdateState: String!
-    functionalChannels: String!
-    functionalChannelCount: String!
-    deviceOverheated: String!
-    deviceOverloaded: String!
-    deviceUndervoltage: String!
-    temperatureOutOfRange: String!
-    coProFaulty: String!
-    coProRestartNeeded: String!
-    coProUpdateFailure: String!
+    configPending: Boolean!
+    permanentlyReachable: Boolean!
+    liveUpdateState: String!              # Ideally should be an Enum
+    functionalChannels: String!           # Placeholder for real structured type
+    functionalChannelCount: String!       # Could be Map<String, Int> or JSON
+    deviceOverheated: Boolean!
+    deviceOverloaded: Boolean!
+    deviceUndervoltage: Boolean!
+    temperatureOutOfRange: Boolean!
+    coProFaulty: Boolean!
+    coProRestartNeeded: Boolean!
+    coProUpdateFailure: Boolean!
 }
 
 type GenericDevice implements DeviceIF {
@@ -37,31 +35,29 @@ type GenericDevice implements DeviceIF {
     id: String!
     homeId: String!
     lastStatusUpdate: String!
-    updateState: String!
+    updateState: String!                  # Ideally should be an Enum
     firmwareVersion: String!
     availableFirmwareVersion: String!
-    lowBat: String!
-    routerModuleSupported: String!
-    routerModuleEnabled: String!
+    lowBat: Boolean!
+    routerModuleSupported: Boolean!
+    routerModuleEnabled: Boolean!
     modelType: String!
-    modelId: String!
+    modelId: Int!
     oem: String!
-    manufacturerCode: String!
+    manufacturerCode: Int!
     serializedGlobalTradeItemNumber: String!
-    #rssiDeviceValue: String!
-    #dutyCycle: String!
-    configPending: String!
-    permanentlyReachable: String!
-    liveUpdateState: String!
-    functionalChannels: String!
-    functionalChannelCount: String!
-    deviceOverheated: String!
-    deviceOverloaded: String!
-    deviceUndervoltage: String!
-    temperatureOutOfRange: String!
-    coProFaulty: String!
-    coProRestartNeeded: String!
-    coProUpdateFailure: String!
+    configPending: Boolean!
+    permanentlyReachable: Boolean!
+    liveUpdateState: String!              # Ideally should be an Enum
+    functionalChannels: String!           # Placeholder for real structured type
+    functionalChannelCount: String!       # Could be Map<String, Int> or JSON
+    deviceOverheated: Boolean!
+    deviceOverloaded: Boolean!
+    deviceUndervoltage: Boolean!
+    temperatureOutOfRange: Boolean!
+    coProFaulty: Boolean!
+    coProRestartNeeded: Boolean!
+    coProUpdateFailure: Boolean!
 
 }
 
@@ -72,31 +68,29 @@ type ShutterContact implements DeviceIF {
     id: String!
     homeId: String!
     lastStatusUpdate: String!
-    updateState: String!
+    updateState: String!                  # Ideally should be an Enum
     firmwareVersion: String!
     availableFirmwareVersion: String!
-    lowBat: String!
-    routerModuleSupported: String!
-    routerModuleEnabled: String!
+    lowBat: Boolean!
+    routerModuleSupported: Boolean!
+    routerModuleEnabled: Boolean!
     modelType: String!
-    modelId: String!
+    modelId: Int!
     oem: String!
-    manufacturerCode: String!
+    manufacturerCode: Int!
     serializedGlobalTradeItemNumber: String!
-    #rssiDeviceValue: String!
-    #dutyCycle: String!
-    configPending: String!
-    permanentlyReachable: String!
-    liveUpdateState: String!
-    functionalChannels: String!
-    functionalChannelCount: String!
-    deviceOverheated: String!
-    deviceOverloaded: String!
-    deviceUndervoltage: String!
-    temperatureOutOfRange: String!
-    coProFaulty: String!
-    coProRestartNeeded: String!
-    coProUpdateFailure: String!
+    configPending: Boolean!
+    permanentlyReachable: Boolean!
+    liveUpdateState: String!              # Ideally should be an Enum
+    functionalChannels: String!           # Placeholder for real structured type
+    functionalChannelCount: String!       # Could be Map<String, Int> or JSON
+    deviceOverheated: Boolean!
+    deviceOverloaded: Boolean!
+    deviceUndervoltage: Boolean!
+    temperatureOutOfRange: Boolean!
+    coProFaulty: Boolean!
+    coProRestartNeeded: Boolean!
+    coProUpdateFailure: Boolean!
 
     windowState: String!
 }
@@ -107,31 +101,29 @@ type TemperatureHumiditySensorDisplay implements DeviceIF {
     id: String!
     homeId: String!
     lastStatusUpdate: String!
-    updateState: String!
+    updateState: String!                  # Ideally should be an Enum
     firmwareVersion: String!
     availableFirmwareVersion: String!
-    lowBat: String!
-    routerModuleSupported: String!
-    routerModuleEnabled: String!
+    lowBat: Boolean!
+    routerModuleSupported: Boolean!
+    routerModuleEnabled: Boolean!
     modelType: String!
-    modelId: String!
+    modelId: Int!
     oem: String!
-    manufacturerCode: String!
+    manufacturerCode: Int!
     serializedGlobalTradeItemNumber: String!
-    #rssiDeviceValue: String!
-    #dutyCycle: String!
-    configPending: String!
-    permanentlyReachable: String!
-    liveUpdateState: String!
-    functionalChannels: String!
-    functionalChannelCount: String!
-    deviceOverheated: String!
-    deviceOverloaded: String!
-    deviceUndervoltage: String!
-    temperatureOutOfRange: String!
-    coProFaulty: String!
-    coProRestartNeeded: String!
-    coProUpdateFailure: String!
+    configPending: Boolean!
+    permanentlyReachable: Boolean!
+    liveUpdateState: String!              # Ideally should be an Enum
+    functionalChannels: String!           # Placeholder for real structured type
+    functionalChannelCount: String!       # Could be Map<String, Int> or JSON
+    deviceOverheated: Boolean!
+    deviceOverloaded: Boolean!
+    deviceUndervoltage: Boolean!
+    temperatureOutOfRange: Boolean!
+    coProFaulty: Boolean!
+    coProRestartNeeded: Boolean!
+    coProUpdateFailure: Boolean!
 
     temperatureOffset: Float!
     display: String!
