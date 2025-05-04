@@ -1,10 +1,25 @@
+enum DeviceUpdateState {
+    BACKGROUND_UPDATE_NOT_SUPPORTED
+    TRANSFERING_UPDATE
+    UPDATE_AUTHORIZED
+    UPDATE_AVAILABLE
+    UP_TO_DATE
+}
+
+enum LiveUpdateState {
+    LIVE_UPDATE_NOT_SUPPORTED
+    UPDATE_AVAILABLE
+    UPDATE_INCOMPLETE
+    UP_TO_DATE
+}
+
 interface DeviceIF {
     label: String!
     deviceType: String!
     id: String!
     homeId: String!
     lastStatusUpdate: String!
-    updateState: String!                  # Ideally should be an Enum
+    updateState: DeviceUpdateState!    
     firmwareVersion: String!
     availableFirmwareVersion: String!
     lowBat: Boolean!
@@ -17,7 +32,7 @@ interface DeviceIF {
     serializedGlobalTradeItemNumber: String!
     configPending: Boolean!
     permanentlyReachable: Boolean!
-    liveUpdateState: String!              # Ideally should be an Enum
+    liveUpdateState: LiveUpdateState!
     functionalChannels: String!           # Placeholder for real structured type
     functionalChannelCount: String!       # Could be Map<String, Int> or JSON
     deviceOverheated: Boolean!
@@ -35,7 +50,7 @@ type GenericDevice implements DeviceIF {
     id: String!
     homeId: String!
     lastStatusUpdate: String!
-    updateState: String!                  # Ideally should be an Enum
+    updateState: DeviceUpdateState!    
     firmwareVersion: String!
     availableFirmwareVersion: String!
     lowBat: Boolean!
@@ -48,7 +63,7 @@ type GenericDevice implements DeviceIF {
     serializedGlobalTradeItemNumber: String!
     configPending: Boolean!
     permanentlyReachable: Boolean!
-    liveUpdateState: String!              # Ideally should be an Enum
+    liveUpdateState: LiveUpdateState!
     functionalChannels: String!           # Placeholder for real structured type
     functionalChannelCount: String!       # Could be Map<String, Int> or JSON
     deviceOverheated: Boolean!
@@ -68,7 +83,7 @@ type ShutterContact implements DeviceIF {
     id: String!
     homeId: String!
     lastStatusUpdate: String!
-    updateState: String!                  # Ideally should be an Enum
+    updateState: DeviceUpdateState!    
     firmwareVersion: String!
     availableFirmwareVersion: String!
     lowBat: Boolean!
@@ -81,7 +96,7 @@ type ShutterContact implements DeviceIF {
     serializedGlobalTradeItemNumber: String!
     configPending: Boolean!
     permanentlyReachable: Boolean!
-    liveUpdateState: String!              # Ideally should be an Enum
+    liveUpdateState: LiveUpdateState!
     functionalChannels: String!           # Placeholder for real structured type
     functionalChannelCount: String!       # Could be Map<String, Int> or JSON
     deviceOverheated: Boolean!
@@ -95,13 +110,19 @@ type ShutterContact implements DeviceIF {
     windowState: String!
 }
 
+enum ClimateControlDisplay {
+    ACTUAL
+    ACTUAL_HUMIDITY
+    SETPOINT
+}
+
 type TemperatureHumiditySensorDisplay implements DeviceIF {
     label: String!
     deviceType: String!
     id: String!
     homeId: String!
     lastStatusUpdate: String!
-    updateState: String!                  # Ideally should be an Enum
+    updateState: DeviceUpdateState!    
     firmwareVersion: String!
     availableFirmwareVersion: String!
     lowBat: Boolean!
@@ -114,7 +135,7 @@ type TemperatureHumiditySensorDisplay implements DeviceIF {
     serializedGlobalTradeItemNumber: String!
     configPending: Boolean!
     permanentlyReachable: Boolean!
-    liveUpdateState: String!              # Ideally should be an Enum
+    liveUpdateState: LiveUpdateState!
     functionalChannels: String!           # Placeholder for real structured type
     functionalChannelCount: String!       # Could be Map<String, Int> or JSON
     deviceOverheated: Boolean!
@@ -126,7 +147,7 @@ type TemperatureHumiditySensorDisplay implements DeviceIF {
     coProUpdateFailure: Boolean!
 
     temperatureOffset: Float!
-    display: String!
+    display: ClimateControlDisplay!
     actualTemperature: Float!
     humidity: Float!
     setPointTemperature: Float!
